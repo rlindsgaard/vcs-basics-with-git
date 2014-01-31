@@ -185,11 +185,55 @@ Date:   Tue Jan 21 18:44:50 2014 -0800
         <li><code>git merge <span class="url">dest</span></code></li>
       </ol>
     </section>
+  
     <section class="slide">
       <h2>Resolving merge conflicts</h2>
+      <ol>
+        <li>Find conflicts</li>
+        <li>Resolve each one</li>
+        <li>Tell git that they are resolved</li>
+      </ol>
+    </section>
+    <section class="slide">
+      <h2>Merge conflict report</h2>
+<pre>ronni@example$ git checkout source && git merge dest
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.</pre>
     </section>
 
+    <section class="slide">
+      <h2>Find and resolve</h2>
+<pre>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+      &lt;h2&gt;Resolving merge conflicts&lt;/h2&gt;
+=======
+      &lt;h2&gt;Merge conflicts&lt;/h2&gt;
+      &lt;ul&gt;
+        &lt;li&gt;This is added to create a merge conflict&lt;/li&gt;
+      &lt;/ul&gt;
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; dest</pre>
+    </section>
 
+    <section class="slide">
+      <h2>Finish it<h2>
+      <ul>
+        <li>
+<pre>ronni@example$ git status
+# On branch master
+# You have unmerged paths.
+#   (fix conflicts and run "git commit")
+#
+# Unmerged paths:
+#   (use "git add <file>..." to mark resolution)
+#
+# both modified:      index.html</pre>
+        </li>
+        <li>
+<pre>
+</pre>
+        </li>
+      </ul>
+    <section>
     <!-- End slides. -->
 
     <!-- Begin extension snippets. Add or remove as needed. -->
