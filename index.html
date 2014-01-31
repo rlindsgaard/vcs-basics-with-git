@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=1024, user-scalable=no">
 
-  <title>Version Control Basics - Ronni Elken Lindsgaard</title>
+  <title>Version Control Basics With GIT- Ronni Elken Lindsgaard</title>
 
   <!-- Required stylesheet -->
   <link rel="stylesheet" href="core/deck.core.css">
@@ -41,7 +41,7 @@
     <!-- Begin slides. Just make elements with a class of slide. -->
 
     <section class="slide">
-      <h1>Version Control Basics</h1>
+      <h1>Version Control Basics With GIT</h1>
     </section>
 
     <section class="slide">
@@ -59,6 +59,10 @@
       </ul>
     </section>
 
+    <section class="slide">
+      <h1>Basic commands</h1>
+    </section>
+    
     <section class="slide">
       <h2>Initializing a repository</h2>
       <ul>
@@ -109,19 +113,80 @@ git init</pre></code>
     </section>
 
     <section class="slide">
-      <h2>git status</h2>
-
+      <h2>git commit</h2>
+      <ul>
+        <li><pre><code>ronni@example$ git commit -m "Added some slides"
+[master feef0cd] Added some slides
+ 1 file changed, 174 insertions(+)
+ create mode 100644 index.html</pre></code></li>
+      </ul>
     </section>
     <section class="slide">
-      <h2>Basic workflow</h2>
+      <h2>git status</h2>
+<pre>ronni@example$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   index.html
+#
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   boilerplate.html
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	.index.html.swp</pre>
+    </section>
+    <section class="slide">
+      <h2>git log</h2>
+      <pre>ronni@example$ git log
+commit feef0cda4c292c1c613695def03d5ac4d778e7d9
+Author: Ronni Elken Lindsgaard <rel@it-minds.dk>
+Date:   Fri Jan 31 10:58:15 2014 +0100
+
+    Added some slides
+
+commit 63b55fea6b92d442e20fb64446783d9f2ac7c85b
+Author: imakewebthings <caleb@imakewebthings.com>
+Date:   Tue Jan 21 18:44:50 2014 -0800
+
+    Changelog
+</pre>
+    </section>
+    <section class="slide">
+      <h1>Branching</h1>
+    </section>
+    <section class="slide">
+      <h2>git branch</h2>
+      <ul>
+        <li>See branches
+<pre><code>ronni@example$ git branch
+* develop
+  feature/keepalive
+  master
+  release-0-4-0
+  release-0-4-1</code></pre>
+        </li>
+        <li>Create a new branch</li>
+      </ul>
+    </section>
+    <section class="slide">
+      <h2>Basic branching workflow</h2>
       <ol>
-        
-        <li>git init</li>
-        <li>git add 
+        <li><code>git checkout <span class="url">source</span></code></li>
+        <li><code>git branch <span class="url">dest</span></code> or <code>git
+        checkout -b <span class="url">dest</span></code></li>
+        <li>Do some work... git add... git commit</li>
+        <li><code>git checkout <span class="url">source</span></code></li>
+        <li><code>git merge <span class="url">dest</span></code></li>
       </ol>
     </section>
     <section class="slide">
-      <h2>Merge conflicts</h2>
+      <h2>Resolving merge conflicts</h2>
     </section>
 
 
